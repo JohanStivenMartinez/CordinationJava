@@ -52,6 +52,10 @@ def recepcion():
         else:
             return jsonify({"error":"El origen ingresado es erroneo"})
 
+#
+#
+#
+
 if __name__ == '__main__':
     app.run(host='localhost',debug = True ,port=5596)
     
