@@ -2,7 +2,7 @@
 It is a program focused on coordinating a blockchain (Blockchain) in a simple way.
 
 
-
+ ```
 from flask import Flask, jsonify,request
 from pip._vendor import requests
 
@@ -52,4 +52,4 @@ def recepcion():
 if __name__ == '__main__':
     app.run(host='localhost',debug = True ,port=5596)
  
- ´´´
+ ```
