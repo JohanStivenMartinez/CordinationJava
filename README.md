@@ -81,3 +81,11 @@ if __name__ == '__main__':
     app.run(host='localhost',debug = True ,port=5596)
  
 ```
+
+```
+    parameters ={
+        "origen":"origen de los datos",
+        "operacion":"operacion que se desea solicitar",
+        "datos":"datos que se pasaran al destino"
+    }
+ ```
