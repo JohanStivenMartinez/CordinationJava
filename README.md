@@ -84,10 +84,6 @@ if __name__ == '__main__':
 
 ```
 <<<<<<< HEAD
-Hola
-xDDDDD
-sadbwouehguwoqeniq
-```
 =======
     parameters ={
         "origen":"origen de los datos",
