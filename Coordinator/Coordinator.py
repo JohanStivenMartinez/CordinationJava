@@ -40,6 +40,9 @@ def recepcion():
             elif parametros["operacion"] == "cerrarbloque":
                 r = requests.post('url/blockchain',json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros}) 
+            
+            else:
+                 return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
         elif (parametros["origen"] == "blockchain"):
             if parametros["operacion"] == "cerrarbloque":
