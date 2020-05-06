@@ -32,10 +32,18 @@ def recepcion():
 ```
 To decide who to send the information to, it is necessary to have 3 components:
 
-* Origin
-* Destination
-* Operation
+* Origin: Address where the information comes from
+* Operation:Operation to be done
+* Data: Data contained in the file currently arriving
 
+```
+    parameters ={
+        "origen":"origen de los datos",
+        "operacion":"operacion que se desea solicitar",
+        "datos":"datos que se pasaran al destino"
+    }
+    
+```
 In other words, every component must send an Object with this type of parameters as well as the one that sends them.
 
 ```
@@ -85,13 +93,5 @@ if __name__ == '__main__':
 ```
 
 
-```
 
-
-    parameters ={
-        "origen":"origen de los datos",
-        "operacion":"operacion que se desea solicitar",
-        "datos":"datos que se pasaran al destino"
-    }
- ```
 
