@@ -3,10 +3,12 @@ from pip._vendor import requests
 
 app = Flask(__name__)
 
+#metodo de prueba
 @app.route("/")
 def hola_mundo ():
     return jsonify({"hola":"mundo"})
 
+#se crea el metodo que reenvia los datos y se le asigna la ruta /coordinator
 @app.route("/coordinator",methods = ['GET','POST'])
 def recepcion(): 
         parametros = request.get_json()
@@ -57,8 +59,7 @@ def recepcion():
 
 #
 #
-#
-
+#se crea el main y se inicia el servidor en el puerto 5596
 if __name__ == '__main__':
     app.run(host='localhost',debug = True ,port=5596)
     
