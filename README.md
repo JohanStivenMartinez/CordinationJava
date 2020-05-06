@@ -21,6 +21,7 @@ def hola_mundo ():
 ```
 At the same time, there is a method to generate a waiting state, 
 to the requests sent by the external components, and at the same time they must send the information that is sent to them.
+Public link: http://142.44.246.23/coordinator
 
 ```
 

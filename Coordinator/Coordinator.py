@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hola_mundo ():
     return jsonify({"hola":"mundo"})
-
+#http://142.244.44.246/coordinator
 #se crea el metodo que reenvia los datos y se le asigna la ruta /coordinator
 @app.route("/coordinator",methods = ['GET','POST'])
 def recepcion(): 
