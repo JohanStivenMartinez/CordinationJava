@@ -33,8 +33,8 @@ def recepcion():
 To decide who to send the information to, it is necessary to have 3 components:
 
 * Origin: Address where the information comes from
-* Operation:Operation to be done
-* Data: Data contained in the file currently arriving
+* Operation: Operation to be requested
+* Data: Data to be passed to destination
 
 ```
     parameters ={
