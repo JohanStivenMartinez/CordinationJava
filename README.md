@@ -1,6 +1,20 @@
 # CordinationPython
 It is a program focused on coordinating a blockchain (Blockchain) in a simple way.
 
+To decide who to send the information to, it is necessary to have 3 components:
+
+* Origin: Address where the information comes from
+* Operation: Operation to be requested
+* Data: Data to be passed to destination
+
+```
+    parameters ={
+        "origen":"origen de los datos",
+        "operacion":"operacion que se desea solicitar",
+        "datos":"datos que se pasaran al destino"
+    }
+    
+```
 
 For this software, the Coordinating Component will be managed, 
 who is in charge of receiving and sending the information to whom it may concern, 
@@ -31,20 +45,7 @@ def recepcion():
         print (parametros)
         #content = request.get_json(silent=True)
 ```
-To decide who to send the information to, it is necessary to have 3 components:
 
-* Origin: Address where the information comes from
-* Operation: Operation to be requested
-* Data: Data to be passed to destination
-
-```
-    parameters ={
-        "origen":"origen de los datos",
-        "operacion":"operacion que se desea solicitar",
-        "datos":"datos que se pasaran al destino"
-    }
-    
-```
 In other words, every component must send an Object with this type of parameters as well as the one that sends them.
 
 ```
