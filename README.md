@@ -15,6 +15,8 @@ To decide who to send the information to, it is necessary to have 3 components:
     }
     
 ```
+Public link: http://142.44.246.23/coordinator
+
 
 For this software, the Coordinating Component will be managed, 
 who is in charge of receiving and sending the information to whom it may concern, 
@@ -35,7 +37,7 @@ def hola_mundo ():
 ```
 At the same time, there is a method to generate a waiting state, 
 to the requests sent by the external components, and at the same time they must send the information that is sent to them.
-Public link: http://142.44.246.23/coordinator
+
 
 ```
 
