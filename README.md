@@ -95,7 +95,11 @@ if __name__ == '__main__':
 ```
 Imagenes:
 
-![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image2.jpg "Ejemplo de petición y respuesta")
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image1.jpg "Ejemplo de petición y respuesta")
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image2.jpg "X")
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image3.jpg "Y")
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image4.jpg "Z")
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image5.jpg "AA")
 
 
 
