@@ -97,11 +97,9 @@ Imagenes:
 
 ![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/imagex.jpg "Ejemplo de petición y respuesta")
 
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image5.jpg "Ejemplo de respuesta")
+
 ![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image3.jpg "Respuesta Erronea")
 
-![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image5.jpg "AA")
 
-
-
-
-
+END!!!!!!!!!!!
