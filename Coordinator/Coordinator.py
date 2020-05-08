@@ -50,7 +50,7 @@ def recepcion():
                  return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
         elif (parametros["origen"] == "opencloser"):
-            if parametros["operacion"] == "solicitrdatabloque":
+            if parametros["operacion"] == "solicitardatabloque":
                 r = requests.post(url_blockchain,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
             
@@ -73,7 +73,7 @@ def recepcion():
             return jsonify({"error":"El origen ingresado es erroneo"})
 
     except TypeError:
-        return jsonify({"error":"No se han detectado datos de entrada",
+        return jsonify({"error":"desconocido",
                         "Status":"Servicio en funcionamiento",
                         "Disclaimer":"Se reciben datos JSON desde GET y POST"})
         
