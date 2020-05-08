@@ -12,8 +12,7 @@ Parameters necessary for sending data through Json, using the "GET" and "POST" m
 
 Below is an example of sending data in JSON format:
 
-![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image3.jpg "Respuesta Erronea")
-
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image5.jpg "Ejemplo de respuesta")
 
 For this software, the Coordinating Component will be managed, 
 who is in charge of receiving and sending the information to whom it may concern, 
@@ -94,8 +93,6 @@ Imagenes:
 
 ![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/imagex.jpg "Ejemplo de petición y respuesta")
 
-![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image5.jpg "Ejemplo de respuesta")
-
-
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image3.jpg "Respuesta Erronea")
 
 END!!!!!!!!!!!
