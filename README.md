@@ -95,7 +95,7 @@ if __name__ == '__main__':
 ```
 Imagenes:
 
-[https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image1.jpg]
+[[https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image1.jpg]]
 
 
 
