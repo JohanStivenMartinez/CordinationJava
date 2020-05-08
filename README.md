@@ -1,21 +1,18 @@
-# CordinationPython
-It is a program focused on coordinating a blockchain (Blockchain) in a simple way.
+Python coordinator
 
-To decide who to send the information to, it is necessary to have 3 components:
+Below is the explanation of a program focused on coordinating a blockchain in a simple way.
+When sending information, it is necessary to have the following specifications:
 
-* Origin: Address where the information comes from
-* Operation: Operation to be requested
-* Data: Data to be passed to destination
+Coordinator URL: http://142.44.246.23:5596/coordinator
 
-```
-    parameters ={
-        "origen":"origen de los datos",
-        "operacion":"operacion que se desea solicitar",
-        "datos":"datos que se pasaran al destino"
-    }
-    
-```
-Public link: http://142.44.246.23/coordinator
+Parameters necessary for sending data through Json, using the "GET" and "POST" methods:
+* Origen: Name of the component. String type. Four possible parameters can be entered: "wallet", "register", "opencloser" or "blockchain".
+* Operacion: Refers to the operation to be requested. String type. Four possible options can be entered: "register transaction", "consult funds", "request data block" or "close block".
+* Datos: Data to be sent must be supported within a Json.
+
+Below is an example of sending data in JSON format:
+
+![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/imagex.jpg "Ejemplo de petición y respuesta")
 
 
 For this software, the Coordinating Component will be managed, 
