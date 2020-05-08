@@ -8,48 +8,34 @@ from flask import Flask, jsonify,request
 from pip._vendor import requests
 
 app = Flask(__name__)
-<<<<<<< HEAD
-#
-#metodo de prueba
-@app.route("/")
-def hola_mundo ():
-    return jsonify({"hola":"mundo"})
-#http://142.244.44.246/coordinator
-#se crea el metodo que reenvia los datos y se le asigna la ruta /coordinator
-=======
 
-""" Flask is a framework for making web pages and its interpretations are given in json language. 
-At the moment they are the libraries that are going to be imported. """
+url_register='http://register.local/recibirData.php'
+url_blockchain='http://127.0.0.1:5000/new_transactions'
+url_wallet1='http://142.44.246.66:4000/wallet_1'
+url_wallet2=' http://142.44.246.66/Registro'
+url_wallet3='https://wallet220200504202955.azurewebsites.net/'
+url_opencloser=''
 
 @app.route("/")
 def hola_mundo ():
     return jsonify({"hola":"mundo"})
 
-""" At the same time, there is a method to generate a waiting state, 
-to the requests sent by the external components, and at the same time they must send the information that is sent to them."""
 
-""" To decide who to send the information to, it is necessary to have 3 components:
-
-* Origin: Address where the information comes from
-* Operation: Operation to be requested
-* Data: Data to be passed to destination """
-
-
->>>>>>> ef6a538acbb1f2a03b404be993a237d425d0bbe3
 @app.route("/coordinator",methods = ['GET','POST'])
 def recepcion(): 
+    try:
+        print("Conectado de manera satisfactoria")
         parametros = request.get_json()
         print (parametros)
-        #content = request.get_json(silent=True)
-
+        
         #In other words, every component must send an Object with this type of parameters as well as the one that sends them.
         if(parametros["origen"] == "wallet"):
             if parametros["operacion"] == "registrartransaccion":
-                r = requests.post('http://localhost:8081/register',json=parametros["datos"])
+                r = requests.post(url_register,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados al register"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
             elif parametros["operacion"] == "consultarfondos":
-                r = requests.post('url/blockchain',json=parametros["datos"])
+                r = requests.post(url_blockchain,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
             else:
@@ -57,7 +43,7 @@ def recepcion():
 
         elif (parametros["origen"] == "register"):
             if parametros["operacion"] == "registrartransaccion":
-                r = requests.post('url/blockchain',json=parametros["datos"])
+                r = requests.post(url_blockchain,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
             else:
@@ -65,11 +51,11 @@ def recepcion():
 
         elif (parametros["origen"] == "opencloser"):
             if parametros["operacion"] == "solicitrdatabloque":
-                r = requests.post('url/blockchain',json=parametros["datos"])
+                r = requests.post(url_blockchain,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
             
             elif parametros["operacion"] == "cerrarbloque":
-                r = requests.post('url/blockchain',json=parametros["datos"])
+                r = requests.post(url_blockchain,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros}) 
             
             else:
@@ -77,7 +63,7 @@ def recepcion():
 
         elif (parametros["origen"] == "blockchain"):
             if parametros["operacion"] == "cerrarbloque":
-                r = requests.post('url/opencloser',json=parametros["datos"])
+                r = requests.post(url_opencloser,json=parametros["datos"])
                 return jsonify({"mensaje":"datos enviados a opencloser"},{"mensaje" : "Peticion recibida","peticion":parametros})
             
             else:
@@ -86,14 +72,14 @@ def recepcion():
         else:
             return jsonify({"error":"El origen ingresado es erroneo"})
 
-<<<<<<< HEAD
+    except TypeError:
+        return jsonify({"error":"No se han detectado datos de entrada",
+                        "Status":"Servicio en funcionamiento",
+                        "Disclaimer":"Se reciben datos JSON desde GET y POST"})
+        
 #
 #
 #se crea el main y se inicia el servidor en el puerto 5596
-=======
-#When finished, a Main is created to run the file.
-
->>>>>>> ef6a538acbb1f2a03b404be993a237d425d0bbe3
 if __name__ == '__main__':
-    app.run(host='localhost',debug = True ,port=5596)
+    app.run(host='142.44.246.23',debug = True, port=5596 )
     
