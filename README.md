@@ -89,10 +89,14 @@ if __name__ == '__main__':
     app.run(host='localhost',debug = True ,port=5596)
  
 ```
-Imagenes:
+
+## Test images:
+
+* Example of request and response:
 
 ![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/imagex.jpg "Ejemplo de petición y respuesta")
 
+* Example of empty request response:
 ![Alt text](https://github.com/JohanStivenMartinez/CordinationPython/blob/master/assets/image3.jpg "Respuesta Erronea")
 
-END!!!!!!!!!!!
+
