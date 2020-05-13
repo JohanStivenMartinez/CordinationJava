@@ -7,7 +7,7 @@ Coordinator URL: http://142.44.246.23:5596/coordinator
 
 Parameters necessary for sending data through Json, using the "GET" and "POST" methods:
 * Origen: Name of the component. String type. Four possible parameters can be entered: "wallet", "register", "opencloser" or "blockchain".
-* Operación: Refers to the operation to be requested. String type. Four possible options can be entered: "register transaction", "consult funds", "request data block" or "close block".
+* Operación: Refers to the operation to be requested. String type. Four possible options can be entered: "solicitardatabloque", "registrartransaccion", "consultarfondos" or "cerrarbloque".
 * Datos: Data to be sent must be supported within a Json.
 
 Below is an example of sending data in JSON format:
