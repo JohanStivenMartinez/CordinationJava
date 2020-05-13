@@ -24,58 +24,76 @@ def hola_mundo ():
 @app.route("/coordinator",methods = ['GET','POST'])
 def recepcion(): 
     try:
-        print("Conectado de manera satisfactoria")
         parametros = request.get_json()
         print (parametros)
         
         #In other words, every component must send an Object with this type of parameters as well as the one that sends them.
         if(parametros["origen"] == "wallet"):
             if parametros["operacion"] == "registrartransaccion":
-                r = requests.post(url_register,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados al register"},{"mensaje" : "Peticion recibida","peticion":parametros})
-
+                try:
+                    r = requests.post(url_register,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados al register"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
+            
             elif parametros["operacion"] == "consultarfondos":
-                r = requests.post(url_blockchain,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
-
+                try:
+                    r = requests.post(url_blockchain,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
+                
             else:
                 return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
         elif (parametros["origen"] == "register"):
+            
             if parametros["operacion"] == "registrartransaccion":
-                r = requests.post(url_blockchain,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                try:
+                    r = requests.post(url_blockchain,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
 
             else:
                  return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
         elif (parametros["origen"] == "opencloser"):
             if parametros["operacion"] == "solicitardatabloque":
-                r = requests.post(url_blockchain,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
-            
+                try:
+                    r = requests.post(url_blockchain,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
+                
             elif parametros["operacion"] == "cerrarbloque":
-                r = requests.post(url_blockchain,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros}) 
-            
+                try:
+                    r = requests.post(url_blockchain,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados a blockchain"},{"mensaje" : "Peticion recibida","peticion":parametros}) 
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
+                
             else:
                  return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
 
         elif (parametros["origen"] == "blockchain"):
             if parametros["operacion"] == "cerrarbloque":
-                r = requests.post(url_opencloser,json=parametros["datos"])
-                return jsonify({"mensaje":"datos enviados a opencloser"},{"mensaje" : "Peticion recibida","peticion":parametros})
-            
+                try:
+                    r = requests.post(url_opencloser,json=parametros["datos"])
+                    return jsonify({"mensaje":"datos enviados a opencloser"},{"mensaje" : "Peticion recibida","peticion":parametros})
+                except:
+                    return jsonify({'mensaje':'Error al enviar los datos'})
+                
             else:
                 return jsonify({"error":"la funcion que ingreso es erronea"},{"mensaje" : "Peticion recibida","peticion":parametros})
         
         else:
             return jsonify({"error":"El origen ingresado es erroneo"})
 
-    except TypeError:
-        return jsonify({"error":"desconocido",
+    except :
+        return jsonify({"Mensaje":"No se han detectado datos de entrada",
                         "Status":"Servicio en funcionamiento",
-                        "Disclaimer":"Se reciben datos JSON desde GET y POST"})
+                        "Disclaimer":"Se reciben datos formato JSON desde GET y POST"})
         
 #
 #
