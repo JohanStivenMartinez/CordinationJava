@@ -16,6 +16,8 @@ url_wallet2=' http://142.44.246.66/Registro'
 url_wallet3='https://wallet220200504202955.azurewebsites.net/'
 url_opencloser=''
 
+#functional test class
+
 @app.route("/")
 def hola_mundo ():
     return jsonify({"hola":"mundo"})
